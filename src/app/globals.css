@@ -1,0 +1,37 @@
+/* :root{
+  color-scheme: light dark;
+}
+
+body{
+  background-color: light-dark("#ccc","#333" );
+  color: light-dark(#333, #fff)
+} */
+
+/* Default (light mode) */
+:root {
+  --bg-color: #ccc;
+  --text-color: #333;
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Dark mode */
+body.dark {
+  --bg-color: #333;
+  --text-color: #fff;
+  color-scheme: dark light;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: invert(var(--text-color));
+}
+button:checked{
+  transform:scale(2);
+}
